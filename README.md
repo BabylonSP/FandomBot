@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+## Добро пожаловать! [сайт](https://rusy233-ms.github.io/FandomBot/)
+Если вы попали сюда, то значит, что хотите сделать такого же бота, как и у меня. 
 
-You can use the [editor on GitHub](https://github.com/Rusy233-ms/FandomBot/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Для этого нужно сделать (читайте внимательно):
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. Скачать Ruby [здесь](https://rubyinstaller.org/downloads/). Нужно выбрать файл Ruby+Devkit+2.4.4-1-(x86) или Ruby+Devkit+2.4.4-1-(x64) в зависимости от разрядности вашей системы. 
+2. Установить Ruby. В окне установщика оставляем галочки _Add Ruby executables to PATH_ и _Associate .rb and .rbw_ и нажимаем _Install_. 
+3. В следующем окне оставляем галочку с компонентом _MSYS2_. И нажимаем _Install_. 
+4. После того, как Ruby установится, оставляем галочку и нажимаем _Finish_. 
+5. Откроется командная строка. В ней пишем цифру `1` и нажимаем _Enter_. После того, как появится надпись `Sucesfully installed!`, закрываем это окно. 
+6. Скачиваем архив с ботом [здесь](https://github.com/Rusy233-ms/FandomBot/archive/master.zip). После чего распаковываем его в папку с ботом. 
+7. Открываем командную строку, и пишем в неё `cd C:/<путь к боту>` (у меня это C:/FandomBot). 
+8. Пишем в командную строку `gem install httparty`. После того, как будет написано `2 gems installed`, можно приступать к следующему шагу. 
+9. Пишем в командную строку `gem install discordrb`. После того, как будет написано `2 gems installed`, можно приступать к следующему шагу.
+10. Редактируем файл `cfg.json`, и вместо значения _TOKEN_ пишем токен бота, полученный на [этой](https://discordapp.com/developers/applications/me) странице. 
+11. В командной строке пишем `ruby start.rb`. И ваш бот будет в сети. Для получения списка команд мы пишем `!get_help` в чате Discord. 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Rusy233-ms/FandomBot/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Вот и всё. 
