@@ -1,0 +1,33 @@
+{
+  "token": "TOKEN",
+  "id": 8504,
+  "prefix": "!",
+  "owner": 399635690180182028,
+  "wikies": {
+    "ru.luntik": {
+      "rcid": 8239,
+      "uploads": true,
+      "logs": true,
+      "servers": [
+        416616157752066049
+      ]
+    }
+  },
+  "groups": {
+    "-164796440": {
+      "id": 0,
+      "servers": [
+        416616157752066049
+      ]
+    }
+  },
+  "ignored": [
+    273868003995680768
+  ],
+  "blacklisted": [
+    297268278865166336
+  ],
+  "exclude welcome": [
+    268121885743644673
+  ]
+}
