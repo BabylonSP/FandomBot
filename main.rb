@@ -1,4 +1,3 @@
-::RBNACL_LIBSODIUM_GEM_LIB_PATH = "C:\FandomBot\libsodium.dll"
 require 'discordrb'
 require 'json'
 require 'httparty'
@@ -49,8 +48,9 @@ module DiscordBot
         register_modules
 
         @bot.update_status( 'Discord Ruby', '!help/!get_help', nil )
+        GC.start(full_mark: true, immediate_sweep: true)
       end
-    
+
       @bot.pm do | e |
         if e.user.id != @config[ 'owner' ] then
           b = e.message.timestamp.to_s.gsub( /\s\+\d+$/, '' ) + " #{ e.user.name } [#{ e.user.id }]: "
@@ -73,6 +73,8 @@ module DiscordBot
         s = e.server
         c = e.server.general_channel
 
+        next if c.nil?
+
         if !@config[ 'exclude welcome' ].include?( s.id ) and can_do( s, 'send_messages', c ) then
           c.send_message "Добро пожаловать на сервер, <@#{ e.user.id }>. Пожалуйста, ознакомьтесь с правилами данного дискорд-сервера."
         end
@@ -83,6 +85,8 @@ module DiscordBot
 
         s = e.server
         c = e.server.general_channel
+
+        next if c.nil?
 
         if !@config[ 'exclude welcome' ].include?( s.id ) and can_do( s, 'send_messages', c ) then
           c.send_message "#{ e.user.name } покинул сервер."
@@ -106,12 +110,13 @@ module DiscordBot
           "прекращай.",
           "ну ещё пять минуточек...",
           "почему? Во имя чего? Зачем, зачем Вы используете эту команду? Зачем продолжаете делать это? Неужели Вы верите в какую-то миссию или Вам просто интересно? Так в чем же миссия, может быть Вы откроете? Это развлечение, интерес или Вы скучаете? Хрупкие логические теории человека, который отчаянно пытается оправдать свои действия: бесцельные и бессмысленные. Почему, #{ e.user.name }, почему Вы упорствуете?"
+	 
         ]
         e.respond "<@#{ e.user.id }>, #{ a.sample }"
       end
 
       @bot.raw do | e |
-	update_info
+        update_info
       end
 
       @bot.run
